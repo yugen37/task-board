@@ -1,0 +1,16 @@
+{
+  "columns": {
+    "backlog": { "title": "Backlog", "cards": [] },
+    "todo": { "title": "To Do", "cards": [] },
+    "inProgress": { "title": "In Progress", "cards": [] },
+    "done": { "title": "Done", "cards": [] }
+  },
+  "cards": [
+    { "id": "1", "title": "Buy MkDirs or refactor VH design", "project": "Safe Lego", "priority": "high", "column": "todo" },
+    { "id": "2", "title": "Config-drive profession/colors", "project": "Safe Lego", "priority": "high", "column": "backlog" },
+    { "id": "3", "title": "Fix foundation post routing", "project": "CGH", "priority": "medium", "column": "backlog" },
+    { "id": "4", "title": "Deploy site factory script", "project": "Safe Lego", "priority": "medium", "column": "backlog" },
+    { "id": "5", "title": "VH deployed", "project": "Safe Lego", "priority": "low", "column": "done" },
+    { "id": "6", "title": "CGH deployed to Pages", "project": "CGH", "priority": "low", "column": "done" }
+  ]
+}

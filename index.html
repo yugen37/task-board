@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <style>
+        .column { min-height: 200px; }
+        .card { transition: transform 0.1s ease; }
+        .card:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 min-h-screen">
+    <div class="container mx-auto px-4 py-6">
+        <!-- Header -->
+        <header class="flex items-center justify-between mb-8">
+            <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Task Board</h1>
+            <button id="darkModeToggle" class="p-2 rounded-lg bg-white dark:bg-gray-800 shadow text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+                <span class="dark:hidden">🌙</span>
+                <span class="hidden dark:inline">☀️</span>
+            </button>
+        </header>
+
+        <!-- Kanban Board -->
+        <div id="board" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Columns will be injected here -->
+        </div>
+    </div>
+
+    <script>
+        // Priority colors
+        const priorityColors = {
+            high: 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 border-red-200 dark:border-red-800',
+            medium: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800',
+            low: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border-green-200 dark:border-green-800'
+        };
+
+        const priorityLabels = {
+            high: 'High',
+            medium: 'Medium',
+            low: 'Low'
+        };
+
+        // Project badge colors
+        const projectColors = {
+            'Safe Lego': 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
+            'CGH': 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300'
+        };
+
+        // Fetch and render tasks
+        async function loadBoard() {
+            try {
+                const response = await fetch('tasks.json');
+                const data = await response.json();
+                renderBoard(data);
+            } catch (error) {
+                console.error('Failed to load tasks:', error);
+                document.getElementById('board').innerHTML = 
+                    '<div class="col-span-full text-center text-red-500">Failed to load tasks</div>';
+            }
+        }
+
+        function renderBoard(data) {
+            const board = document.getElementById('board');
+            const columnOrder = ['backlog', 'todo', 'inProgress', 'done'];
+
+            board.innerHTML = columnOrder.map(colKey => {
+                const column = data.columns[colKey];
+                const columnCards = data.cards.filter(card => card.column === colKey);
+
+                return `
+                    <div class="column bg-gray-200 dark:bg-gray-800 rounded-xl p-4">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="font-semibold text-gray-700 dark:text-gray-200">${column.title}</h2>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded-full">
+                                ${columnCards.length}
+                            </span>
+                        </div>
+                        <div class="space-y-3">
+                            ${columnCards.map(card => renderCard(card)).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderCard(card) {
+            const priorityClass = priorityColors[card.priority] || priorityColors.medium;
+            const priorityLabel = priorityLabels[card.priority] || card.priority;
+            const projectClass = projectColors[card.project] || 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300';
+
+            return `
+                <div class="card bg-white dark:bg-gray-700 rounded-lg p-4 shadow-sm border border-gray-200 dark:border-gray-600 cursor-pointer">
+                    <div class="flex items-start justify-between gap-2 mb-2">
+                        <span class="text-xs font-medium px-2 py-0.5 rounded ${projectClass}">
+                            ${escapeHtml(card.project)}
+                        </span>
+                        <span class="text-xs font-medium px-2 py-0.5 rounded border ${priorityClass}">
+                            ${priorityLabel}
+                        </span>
+                    </div>
+                    <h3 class="text-gray-800 dark:text-gray-100 text-sm font-medium leading-snug">
+                        ${escapeHtml(card.title)}
+                    </h3>
+                </div>
+            `;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Dark mode toggle
+        function initDarkMode() {
+            const toggle = document.getElementById('darkModeToggle');
+            
+            // Check system preference
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            }
+
+            toggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadBoard();
+            initDarkMode();
+        });
+    </script>
+</body>
+</html>
