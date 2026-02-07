@@ -7,19 +7,20 @@
   },
   "cards": [
     {
-      "id": "2",
-      "title": "Config-drive the template",
+      "id": "12",
+      "title": "🆕 Verified Hypnotherapists v2",
       "project": "Safe Lego",
       "priority": "high",
-      "column": "todo",
-      "goal": "One JSON file = one complete profession site",
+      "column": "inProgress",
+      "goal": "Build VH v2 using safe-lego, proving factory works",
       "checklist": [
-        { "text": "Define config schema", "done": false },
-        { "text": "Extract hardcoded profession strings", "done": false },
-        { "text": "Make colors/theme configurable", "done": false },
-        { "text": "Test with chiropractors + one other profession", "done": false }
+        { "text": "Audit hardcoded profession strings", "done": false },
+        { "text": "Check current config structure", "done": false },
+        { "text": "Create VH v2 site-config.json", "done": false },
+        { "text": "Make all strings config-driven", "done": false },
+        { "text": "Deploy VH v2 site", "done": false }
       ],
-      "notes": "Next priority. All QC passed."
+      "notes": "VH v2 = benchmark proving Safe Lego factory works. Same visuals as VC."
     },
     {
       "id": "3",
@@ -34,7 +35,7 @@
         { "text": "Deploy to Cloudflare Pages", "done": false },
         { "text": "Submit to IndexNow for SEO", "done": false }
       ],
-      "notes": "Goal: 20 sites/day"
+      "notes": "After VH v2 proves config works. Goal: 20 sites/day"
     },
     {
       "id": "11",
@@ -44,54 +45,37 @@
       "column": "done",
       "goal": "Fix all issues found in QC audit",
       "checklist": [
-        { "text": "Add viewport meta export", "done": true },
-        { "text": "Fix CityBlock /directory/ → /city/ links", "done": true },
-        { "text": "Create blog/[slug] route (prevents 404)", "done": true }
+        { "text": "Viewport meta", "done": true },
+        { "text": "CityBlock links", "done": true },
+        { "text": "Blog route", "done": true }
       ],
-      "notes": "3 commits pushed: 1502045, d0504ad, 3888fa3"
+      "notes": "3 commits pushed"
     },
     {
       "id": "8",
-      "title": "✅ Mobile Optimization Audit",
+      "title": "✅ Mobile + 404 Audits",
       "project": "Safe Lego",
       "priority": "high",
       "column": "done",
-      "goal": "Ensure all pages are mobile-optimized",
+      "goal": "QC the VC site",
       "checklist": [
-        { "text": "542 responsive Tailwind classes", "done": true },
-        { "text": "BottomNav mobile navigation", "done": true },
-        { "text": "Grid responsive patterns", "done": true },
-        { "text": "Viewport meta (fixed)", "done": true }
+        { "text": "Mobile optimization", "done": true },
+        { "text": "404 link check", "done": true }
       ],
       "notes": "PASS ✅"
     },
     {
-      "id": "9",
-      "title": "✅ 404 Link Audit",
-      "project": "Safe Lego",
-      "priority": "high",
-      "column": "done",
-      "goal": "Zero broken internal links",
-      "checklist": [
-        { "text": "18 pages verified", "done": true },
-        { "text": "CityBlock links fixed", "done": true },
-        { "text": "Blog route created", "done": true }
-      ],
-      "notes": "PASS ✅ All links valid"
-    },
-    {
       "id": "10",
-      "title": "✅ Visual Upgrade Complete",
+      "title": "✅ Visual Upgrade",
       "project": "Safe Lego",
       "priority": "high",
       "column": "done",
       "goal": "VeroApp-style design",
       "checklist": [
-        { "text": "Amethyst theme", "done": true },
         { "text": "All blocks upgraded", "done": true },
-        { "text": "Deployment verified", "done": true }
+        { "text": "Amethyst theme", "done": true }
       ],
-      "notes": "HTTP 200 confirmed"
+      "notes": "Deployed to VC"
     }
   ]
 }
