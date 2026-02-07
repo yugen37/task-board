@@ -7,26 +7,42 @@
   },
   "cards": [
     {
-      "id": "1",
-      "title": "Design Decision: MkDirs vs VH Refactor",
+      "id": "8",
+      "title": "🔍 Mobile Optimization Audit",
       "project": "Safe Lego",
       "priority": "high",
-      "column": "todo",
-      "goal": "Pick the path forward for professional-looking directory sites",
+      "column": "inProgress",
+      "goal": "Ensure all pages are mobile-optimized",
       "checklist": [
-        { "text": "Reviewed MkDirs features ($79, Next.js + Shadcn + Sanity)", "done": true },
-        { "text": "Compared to refactoring VH (free but 2-3 weeks work)", "done": true },
-        { "text": "User wants bougie Hero UI look", "done": true },
-        { "text": "Make final decision: buy or build?", "done": false }
+        { "text": "Check viewport meta tag", "done": false },
+        { "text": "Audit responsive Tailwind classes", "done": false },
+        { "text": "Check for fixed pixel widths", "done": false },
+        { "text": "Test all blocks mobile rendering", "done": false },
+        { "text": "Fix any issues found", "done": false }
       ],
-      "notes": "MkDirs = professional design out of box, $79 one-time. VH = already built but looks homemade. Either way, need to config-drive for 100 sites."
+      "notes": "Spawned kimi-worker for audit. Results pending."
+    },
+    {
+      "id": "9",
+      "title": "🔗 404 Link Check",
+      "project": "Safe Lego",
+      "priority": "high",
+      "column": "inProgress",
+      "goal": "Zero broken internal links",
+      "checklist": [
+        { "text": "Find all internal Link components", "done": false },
+        { "text": "Find all anchor tags", "done": false },
+        { "text": "Cross-reference with actual pages", "done": false },
+        { "text": "Fix any broken links", "done": false }
+      ],
+      "notes": "Spawned kimi-worker for audit. Results pending."
     },
     {
       "id": "2",
       "title": "Config-drive the template",
       "project": "Safe Lego",
       "priority": "high",
-      "column": "backlog",
+      "column": "todo",
       "goal": "One JSON file = one complete profession site (colors, copy, specializations)",
       "checklist": [
         { "text": "Define config schema", "done": false },
@@ -34,7 +50,7 @@
         { "text": "Make colors/theme configurable", "done": false },
         { "text": "Test with chiropractors + one other profession", "done": false }
       ],
-      "notes": "This is the core of Safe Lego. Blocked by design decision (card #1). Once template is chosen, this is next."
+      "notes": "Next after QC passes. Visual upgrade done, now make it config-driven."
     },
     {
       "id": "3",
@@ -50,6 +66,23 @@
         { "text": "Submit to IndexNow for SEO", "done": false }
       ],
       "notes": "Final step. Once config-driven template works, wrap it in automation. Goal: 20 sites/day."
+    },
+    {
+      "id": "10",
+      "title": "✅ Visual Upgrade Complete",
+      "project": "Safe Lego",
+      "priority": "high",
+      "column": "done",
+      "goal": "VeroApp-style professional design for VC pilot",
+      "checklist": [
+        { "text": "Amethyst theme + Tailwind config", "done": true },
+        { "text": "Hero, CTA, Stats, FAQ blocks", "done": true },
+        { "text": "Testimonials, How-it-works, Directory, Search", "done": true },
+        { "text": "Contact, About, Profile, Verification", "done": true },
+        { "text": "Footer/Navbar polish", "done": true },
+        { "text": "Deployment verified (HTTP 200)", "done": true }
+      ],
+      "notes": "4 commits pushed 2026-02-07. Server verified working via curl."
     },
     {
       "id": "4",
@@ -83,32 +116,18 @@
     },
     {
       "id": "6",
-      "title": "CGH deployed",
+      "title": "CGH + CHC deployed",
       "project": "CGH",
       "priority": "low",
       "column": "done",
-      "goal": "Calgary Gut Hypnotherapy site live and working",
+      "goal": "Both therapy sites live and working",
       "checklist": [
-        { "text": "Static export setup", "done": true },
-        { "text": "Deploy to Cloudflare Pages", "done": true },
-        { "text": "Main pages working", "done": true },
-        { "text": "Blog posts working", "done": true }
+        { "text": "CGH static export", "done": true },
+        { "text": "CGH Pages deploy", "done": true },
+        { "text": "CGH foundation posts fixed", "done": true },
+        { "text": "CHC confirmed working", "done": true }
       ],
-      "notes": "LIVE at calgary-gut-hypnotherapy.pages.dev ✅ Minor issue: some foundation blog posts 404 (low priority, non-blocking)."
-    },
-    {
-      "id": "7",
-      "title": "VH pilot deployed",
-      "project": "Safe Lego",
-      "priority": "low",
-      "column": "done",
-      "goal": "Verified Hypnotherapists site live as proof of concept",
-      "checklist": [
-        { "text": "Build directory site", "done": true },
-        { "text": "Deploy to hosting", "done": true },
-        { "text": "Basic functionality working", "done": true }
-      ],
-      "notes": "Live but design needs upgrade. This will be replaced/improved once Safe Lego factory is ready."
+      "notes": "Both LIVE ✅ CGH at calgary-gut-hypnotherapy.pages.dev"
     }
   ]
 }
