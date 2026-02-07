@@ -12,14 +12,14 @@
       "project": "Safe Lego",
       "priority": "high",
       "column": "todo",
-      "goal": "One JSON file = one complete profession site (colors, copy, specializations)",
+      "goal": "One JSON file = one complete profession site",
       "checklist": [
         { "text": "Define config schema", "done": false },
-        { "text": "Extract all hardcoded profession strings", "done": false },
+        { "text": "Extract hardcoded profession strings", "done": false },
         { "text": "Make colors/theme configurable", "done": false },
         { "text": "Test with chiropractors + one other profession", "done": false }
       ],
-      "notes": "Next priority. Visual upgrade done, QC passed. Now make it config-driven."
+      "notes": "Next priority. All QC passed."
     },
     {
       "id": "3",
@@ -27,14 +27,28 @@
       "project": "Safe Lego",
       "priority": "medium",
       "column": "backlog",
-      "goal": "Automate: config.json → deployed site → indexed on Google",
+      "goal": "config.json → deployed site → indexed on Google",
       "checklist": [
         { "text": "Create deploy.sh script", "done": false },
         { "text": "Clone template, inject config", "done": false },
         { "text": "Deploy to Cloudflare Pages", "done": false },
         { "text": "Submit to IndexNow for SEO", "done": false }
       ],
-      "notes": "Final step. Once config-driven template works, wrap in automation. Goal: 20 sites/day."
+      "notes": "Goal: 20 sites/day"
+    },
+    {
+      "id": "11",
+      "title": "✅ QC Fixes Deployed",
+      "project": "Safe Lego",
+      "priority": "high",
+      "column": "done",
+      "goal": "Fix all issues found in QC audit",
+      "checklist": [
+        { "text": "Add viewport meta export", "done": true },
+        { "text": "Fix CityBlock /directory/ → /city/ links", "done": true },
+        { "text": "Create blog/[slug] route (prevents 404)", "done": true }
+      ],
+      "notes": "3 commits pushed: 1502045, d0504ad, 3888fa3"
     },
     {
       "id": "8",
@@ -44,29 +58,26 @@
       "column": "done",
       "goal": "Ensure all pages are mobile-optimized",
       "checklist": [
-        { "text": "Check viewport meta tag (Next.js auto)", "done": true },
-        { "text": "Audit responsive Tailwind classes (542 found)", "done": true },
-        { "text": "Check for fixed pixel widths (3, all responsive)", "done": true },
+        { "text": "542 responsive Tailwind classes", "done": true },
         { "text": "BottomNav mobile navigation", "done": true },
         { "text": "Grid responsive patterns", "done": true },
-        { "text": "Flex-wrap usage (22 instances)", "done": true }
+        { "text": "Viewport meta (fixed)", "done": true }
       ],
-      "notes": "PASS ✅ Site is well-optimized. 542 responsive classes, mobile nav, xs:375px breakpoint."
+      "notes": "PASS ✅"
     },
     {
       "id": "9",
-      "title": "✅ 404 Link Check",
+      "title": "✅ 404 Link Audit",
       "project": "Safe Lego",
       "priority": "high",
       "column": "done",
       "goal": "Zero broken internal links",
       "checklist": [
-        { "text": "Find all internal Link components", "done": true },
-        { "text": "Cross-reference with actual pages", "done": true },
-        { "text": "Check dynamic routes exist", "done": true },
-        { "text": "All 18 pages verified", "done": true }
+        { "text": "18 pages verified", "done": true },
+        { "text": "CityBlock links fixed", "done": true },
+        { "text": "Blog route created", "done": true }
       ],
-      "notes": "PASS ✅ All internal links valid. 18 pages, 4 dynamic routes ([slug])."
+      "notes": "PASS ✅ All links valid"
     },
     {
       "id": "10",
@@ -74,44 +85,13 @@
       "project": "Safe Lego",
       "priority": "high",
       "column": "done",
-      "goal": "VeroApp-style professional design for VC pilot",
+      "goal": "VeroApp-style design",
       "checklist": [
-        { "text": "Amethyst theme + Tailwind config", "done": true },
-        { "text": "Hero, CTA, Stats, FAQ blocks", "done": true },
-        { "text": "Testimonials, How-it-works, Directory, Search", "done": true },
-        { "text": "Contact, About, Profile, Verification", "done": true },
-        { "text": "Footer/Navbar polish", "done": true },
-        { "text": "Deployment verified (HTTP 200)", "done": true }
+        { "text": "Amethyst theme", "done": true },
+        { "text": "All blocks upgraded", "done": true },
+        { "text": "Deployment verified", "done": true }
       ],
-      "notes": "4 commits pushed 2026-02-07. Server verified working via curl."
-    },
-    {
-      "id": "4",
-      "title": "Task Board created",
-      "project": "Meta",
-      "priority": "low",
-      "column": "done",
-      "goal": "Single source of truth for all projects",
-      "checklist": [
-        { "text": "Build kanban board", "done": true },
-        { "text": "Deploy to GitHub Pages", "done": true },
-        { "text": "Add to heartbeat auto-sync", "done": true }
-      ],
-      "notes": "Live at https://yugen37.github.io/task-board/"
-    },
-    {
-      "id": "6",
-      "title": "CGH + CHC deployed",
-      "project": "CGH",
-      "priority": "low",
-      "column": "done",
-      "goal": "Both therapy sites live and working",
-      "checklist": [
-        { "text": "CGH static export + deploy", "done": true },
-        { "text": "CGH foundation posts fixed", "done": true },
-        { "text": "CHC confirmed working", "done": true }
-      ],
-      "notes": "Both LIVE ✅"
+      "notes": "HTTP 200 confirmed"
     }
   ]
 }
