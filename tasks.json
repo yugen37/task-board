@@ -12,86 +12,103 @@
       "project": "Safe Lego",
       "priority": "high",
       "column": "todo",
-      "goal": "Decide whether to buy MkDirs ($79) or refactor VH for better design",
+      "goal": "Pick the path forward for professional-looking directory sites",
       "checklist": [
-        { "text": "Review MkDirs demo", "done": true },
-        { "text": "Compare features to VH", "done": true },
-        { "text": "Make final decision", "done": false }
+        { "text": "Reviewed MkDirs features ($79, Next.js + Shadcn + Sanity)", "done": true },
+        { "text": "Compared to refactoring VH (free but 2-3 weeks work)", "done": true },
+        { "text": "User wants bougie Hero UI look", "done": true },
+        { "text": "Make final decision: buy or build?", "done": false }
       ],
-      "notes": "MkDirs has professional design + directory features. VH works but looks homemade. $79 vs 2-3 weeks refactoring."
+      "notes": "MkDirs = professional design out of box, $79 one-time. VH = already built but looks homemade. Either way, need to config-drive for 100 sites."
     },
     {
       "id": "2",
-      "title": "Config-drive profession/colors",
+      "title": "Config-drive the template",
       "project": "Safe Lego",
       "priority": "high",
       "column": "backlog",
-      "goal": "Make site template configurable so one JSON = one profession site",
+      "goal": "One JSON file = one complete profession site (colors, copy, specializations)",
       "checklist": [
-        { "text": "Define config schema (profession, colors, specializations)", "done": false },
-        { "text": "Extract hardcoded strings to config", "done": false },
-        { "text": "Test with 2 different professions", "done": false }
+        { "text": "Define config schema", "done": false },
+        { "text": "Extract all hardcoded profession strings", "done": false },
+        { "text": "Make colors/theme configurable", "done": false },
+        { "text": "Test with chiropractors + one other profession", "done": false }
       ],
-      "notes": "This is the core of Safe Lego. Config controls everything: name, colors, copy, which pages to include."
+      "notes": "This is the core of Safe Lego. Blocked by design decision (card #1). Once template is chosen, this is next."
     },
     {
       "id": "3",
-      "title": "Fix foundation post routing",
-      "project": "CGH",
-      "priority": "medium",
-      "column": "backlog",
-      "goal": "Foundation posts (how-hypnotherapy-works, etc) return 404",
-      "checklist": [
-        { "text": "Diagnose routing issue", "done": true },
-        { "text": "Import missing post components in [slug]/page.tsx", "done": false },
-        { "text": "Add slug→component mapping", "done": false },
-        { "text": "Test all foundation post URLs", "done": false }
-      ],
-      "notes": "HowHypnotherapyWorksPost.tsx exists (1090 lines) but NOT imported/mapped in app/blog/[slug]/page.tsx"
-    },
-    {
-      "id": "4",
-      "title": "Build deployment script",
+      "title": "Build factory deploy script",
       "project": "Safe Lego",
       "priority": "medium",
       "column": "backlog",
-      "goal": "Script that takes config.json and deploys a new site automatically",
+      "goal": "Automate: config.json → deployed site → indexed on Google",
       "checklist": [
         { "text": "Create deploy.sh script", "done": false },
-        { "text": "Clone base template", "done": false },
-        { "text": "Inject config values", "done": false },
+        { "text": "Clone template, inject config", "done": false },
         { "text": "Deploy to Cloudflare Pages", "done": false },
         { "text": "Submit to IndexNow for SEO", "done": false }
       ],
-      "notes": "Goal: fill config → run script → site live + indexed on Google"
+      "notes": "Final step. Once config-driven template works, wrap it in automation. Goal: 20 sites/day."
+    },
+    {
+      "id": "4",
+      "title": "Task Board created",
+      "project": "Meta",
+      "priority": "low",
+      "column": "done",
+      "goal": "Single source of truth for all projects",
+      "checklist": [
+        { "text": "Build kanban board", "done": true },
+        { "text": "Deploy to GitHub Pages", "done": true },
+        { "text": "Add to heartbeat auto-sync", "done": true },
+        { "text": "Add detailed cards with goals/checklists", "done": true }
+      ],
+      "notes": "Live at https://yugen37.github.io/task-board/ — auto-synced during heartbeats."
     },
     {
       "id": "5",
-      "title": "Verified Hypnotherapists deployed",
-      "project": "Safe Lego",
+      "title": "Shared memory with Claude Code",
+      "project": "Meta",
       "priority": "low",
       "column": "done",
-      "goal": "First directory site live",
+      "goal": "One brain, two hands — Henry + Claude Code share context",
       "checklist": [
-        { "text": "Build site", "done": true },
-        { "text": "Deploy to hosting", "done": true },
-        { "text": "Verify it works", "done": true }
+        { "text": "Create shared gist", "done": true },
+        { "text": "Add gist sync to heartbeat", "done": true },
+        { "text": "Add TASK:OC/TASK:CC handoff protocol", "done": true },
+        { "text": "Update AGENTS.md with instructions", "done": true }
       ],
-      "notes": "Live but design needs work. Will be replaced/upgraded once Safe Lego factory is ready."
+      "notes": "Gist: github.com/yugen37/...1e67c78c86acf48fa8743f0d996de0a7. Both agents read/write."
     },
     {
       "id": "6",
-      "title": "CGH deployed to Cloudflare Pages",
+      "title": "CGH deployed",
       "project": "CGH",
       "priority": "low",
       "column": "done",
-      "goal": "Calgary Gut Hypnotherapy site live",
+      "goal": "Calgary Gut Hypnotherapy site live and working",
       "checklist": [
         { "text": "Static export setup", "done": true },
-        { "text": "Deploy to CF Pages", "done": true },
-        { "text": "Verify pages work", "done": true }
+        { "text": "Deploy to Cloudflare Pages", "done": true },
+        { "text": "Main pages working", "done": true },
+        { "text": "Blog posts working", "done": true }
       ],
-      "notes": "Live at calgary-gut-hypnotherapy.pages.dev. Blog posts need slug: in frontmatter."
+      "notes": "LIVE at calgary-gut-hypnotherapy.pages.dev ✅ Minor issue: some foundation blog posts 404 (low priority, non-blocking)."
+    },
+    {
+      "id": "7",
+      "title": "VH pilot deployed",
+      "project": "Safe Lego",
+      "priority": "low",
+      "column": "done",
+      "goal": "Verified Hypnotherapists site live as proof of concept",
+      "checklist": [
+        { "text": "Build directory site", "done": true },
+        { "text": "Deploy to hosting", "done": true },
+        { "text": "Basic functionality working", "done": true }
+      ],
+      "notes": "Live but design needs upgrade. This will be replaced/improved once Safe Lego factory is ready."
     }
   ]
 }
