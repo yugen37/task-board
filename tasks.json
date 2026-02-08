@@ -7,66 +7,125 @@
   },
   "cards": [
     {
-      "id": "12",
-      "title": "🆕 Verified Hypnotherapists v2",
-      "project": "Safe Lego",
-      "priority": "high",
-      "column": "inProgress",
-      "goal": "Build VH v2 using safe-lego, proving factory works",
+      "id": "20",
+      "title": "🔥 P1: Extract Aplio Atoms",
+      "project": "Safe Lego Aplio",
+      "priority": "critical",
+      "column": "todo",
+      "goal": "Extract design foundation from Aplio",
       "checklist": [
-        { "text": "Audit hardcoded profession strings", "done": false },
-        { "text": "Check current config structure", "done": false },
-        { "text": "Create VH v2 site-config.json", "done": false },
-        { "text": "Make all strings config-driven", "done": false },
-        { "text": "Deploy VH v2 site", "done": false }
+        { "text": "Card component", "done": false },
+        { "text": "Button component", "done": false },
+        { "text": "Input/Search component", "done": false },
+        { "text": "Badge/Tag component", "done": false },
+        { "text": "Avatar component", "done": false },
+        { "text": "Typography system", "done": false },
+        { "text": "Color/shadow tokens", "done": false }
       ],
-      "notes": "VH v2 = benchmark proving Safe Lego factory works. Same visuals as VC."
+      "notes": "CRITICAL PATH - everything depends on this. Kimi task."
     },
     {
-      "id": "3",
-      "title": "Build factory deploy script",
-      "project": "Safe Lego",
+      "id": "21",
+      "title": "🔥 P2: Port Home 6 Components",
+      "project": "Safe Lego Aplio",
+      "priority": "critical",
+      "column": "backlog",
+      "goal": "Homepage with Aplio Home 6 design",
+      "checklist": [
+        { "text": "Hero block", "done": false },
+        { "text": "Feature/TrustPoints block", "done": false },
+        { "text": "Testimonials block", "done": false },
+        { "text": "Approach/HowItWorks block", "done": false },
+        { "text": "CTA block", "done": false },
+        { "text": "Navbar (config-driven)", "done": false },
+        { "text": "Footer (config-driven)", "done": false }
+      ],
+      "notes": "Depends on P1. Kimi task. Wire to site-config.json."
+    },
+    {
+      "id": "22",
+      "title": "🔥 P3: Rebuild Directory Pages",
+      "project": "Safe Lego Aplio",
+      "priority": "critical",
+      "column": "backlog",
+      "goal": "Search, profiles, locations with Aplio atoms",
+      "checklist": [
+        { "text": "Search page (Aplio atoms + VH logic)", "done": false },
+        { "text": "Practitioner profile page", "done": false },
+        { "text": "City/Location pages", "done": false },
+        { "text": "Specialization pages", "done": false },
+        { "text": "Directory grid", "done": false }
+      ],
+      "notes": "Depends on P1. Kimi task. Same atoms = visual harmony."
+    },
+    {
+      "id": "23",
+      "title": "P4: Port Other Aplio Pages",
+      "project": "Safe Lego Aplio",
+      "priority": "high",
+      "column": "backlog",
+      "goal": "Complete page set with Aplio design",
+      "checklist": [
+        { "text": "About page", "done": false },
+        { "text": "FAQ page", "done": false },
+        { "text": "Contact page", "done": false },
+        { "text": "Blog list page", "done": false },
+        { "text": "Blog detail page", "done": false },
+        { "text": "For Practitioners (pricing)", "done": false },
+        { "text": "Privacy/Terms pages", "done": false }
+      ],
+      "notes": "Depends on P1. Can run parallel with P3. Kimi task."
+    },
+    {
+      "id": "24",
+      "title": "P5: Visual QC + Deploy VH v2",
+      "project": "Safe Lego Aplio",
+      "priority": "high",
+      "column": "backlog",
+      "goal": "Full Aplio design live on VH v2",
+      "checklist": [
+        { "text": "Deploy to CF Pages", "done": false },
+        { "text": "K2.5 screenshot all pages", "done": false },
+        { "text": "Fix any visual issues", "done": false },
+        { "text": "Mobile responsive check", "done": false }
+      ],
+      "notes": "Depends on P2, P3, P4. Proves factory works."
+    },
+    {
+      "id": "25",
+      "title": "P6: Factory Deploy Script",
+      "project": "Safe Lego Aplio",
       "priority": "medium",
       "column": "backlog",
-      "goal": "config.json → deployed site → indexed on Google",
+      "goal": "One command = new directory site",
       "checklist": [
         { "text": "Create deploy.sh script", "done": false },
-        { "text": "Clone template, inject config", "done": false },
+        { "text": "Clone safe-lego, inject config", "done": false },
         { "text": "Deploy to Cloudflare Pages", "done": false },
-        { "text": "Submit to IndexNow for SEO", "done": false }
+        { "text": "Submit to IndexNow for SEO", "done": false },
+        { "text": "Test with 3 professions", "done": false }
       ],
-      "notes": "After VH v2 proves config works. Goal: 20 sites/day"
+      "notes": "Final step. Goal: config → live site in 2 min, ~$0.07/site"
     },
     {
-      "id": "11",
-      "title": "✅ QC Fixes Deployed",
+      "id": "12",
+      "title": "✅ VH v2 Basic Setup",
       "project": "Safe Lego",
       "priority": "high",
       "column": "done",
-      "goal": "Fix all issues found in QC audit",
+      "goal": "VH v2 repo created, config-driven basics",
       "checklist": [
-        { "text": "Viewport meta", "done": true },
-        { "text": "CityBlock links", "done": true },
-        { "text": "Blog route", "done": true }
+        { "text": "Create VH v2 repo", "done": true },
+        { "text": "site-config.json for hypnotherapists", "done": true },
+        { "text": "Deploy to CF Pages", "done": true },
+        { "text": "Design tokens wired", "done": true },
+        { "text": "Fonts added (Plus Jakarta Sans)", "done": true }
       ],
-      "notes": "3 commits pushed"
-    },
-    {
-      "id": "8",
-      "title": "✅ Mobile + 404 Audits",
-      "project": "Safe Lego",
-      "priority": "high",
-      "column": "done",
-      "goal": "QC the VC site",
-      "checklist": [
-        { "text": "Mobile optimization", "done": true },
-        { "text": "404 link check", "done": true }
-      ],
-      "notes": "PASS ✅"
+      "notes": "Foundation ready. Now needs Aplio design."
     },
     {
       "id": "10",
-      "title": "✅ Visual Upgrade",
+      "title": "✅ Visual Upgrade (Pre-Aplio)",
       "project": "Safe Lego",
       "priority": "high",
       "column": "done",
@@ -75,7 +134,20 @@
         { "text": "All blocks upgraded", "done": true },
         { "text": "Amethyst theme", "done": true }
       ],
-      "notes": "Deployed to VC"
+      "notes": "Superseded by Aplio design"
+    },
+    {
+      "id": "8",
+      "title": "✅ QC Audits",
+      "project": "Safe Lego",
+      "priority": "high",
+      "column": "done",
+      "goal": "Mobile + 404 checks",
+      "checklist": [
+        { "text": "Mobile optimization", "done": true },
+        { "text": "404 link check", "done": true }
+      ],
+      "notes": "PASS ✅"
     }
   ]
 }
